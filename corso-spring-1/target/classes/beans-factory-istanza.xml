@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		
+		
+	<!-- definizione del bean che contiene i metodi da invocare per la freazione dei bean-->
+	
+	<bean id="beanfactory" class="it.test.corsospring.BeanFactoryIstanza"> </bean>
+	
+	<!-- qui si usa il factoy-bean per riferirisi alla classe che genra i bean -->
+	<bean id="ordine" factory-bean="beanfactory"  factory-method="getOrdine" init-method="init"  destroy-method="clean"></bean>
+	<bean id="prodotto" factory-bean="beanfactory" factory-method="getProdotto"></bean> 
+
+</beans>
