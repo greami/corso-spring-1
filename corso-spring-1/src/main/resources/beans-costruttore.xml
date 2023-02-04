@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+	<bean id="ordine" class="it.test.corsospring.OrdineService">  
+		<property name="prodotto" ref="prodotto"></property>  
+		<!--  <property name="cliente" ref="cliente"></property>  -->
+	</bean>
+	
+	<bean id="prodotto" class="it.test.corsospring.ProdottoService">  </bean>
+	
+	<bean id="cliente" class="it.test.corsospring.ClienteService"> 
+		<property name="helloMessage" value="ciao Benvenuto"></property> 	
+	</bean>
+	
+	
+	<bean id="fattura" class="it.test.corsospring.FatturaService">
+		<constructor-arg ref="ordine"></constructor-arg>
+		<constructor-arg ref="cliente"></constructor-arg>
+		<!-- constructor-arg type="String" value="n.1200"></constructor-arg-->
+	</bean>
+       
+ 
+</beans>

@@ -11,5 +11,16 @@ public class ProdottoService
 	{
 		return "Teleefono " + new Date().getTime();
 	}
+	
+	
+	public void clean()
+	{
+		System.out.println("sono in clean");
+	}
 
+	
+	public String[] getListprodotti()
+	{
+		return new String [] {"prod1", "prod2", "prod3"};
+	}
 }

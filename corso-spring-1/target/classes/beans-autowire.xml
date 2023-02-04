@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  
+    <bean id="autoA" class="it.test.corsospring.BeanAutoA">  </bean>
+	<bean id="autoB" class="it.test.corsospring.BeanAutoB" autowire="byName"> </bean>
+	<bean id="autoC" class="it.test.corsospring.BeanAutoC">  </bean>
+	<bean id="autoD" class="it.test.corsospring.BeanAutoD" autowire="byType">  </bean>
+	<bean id="autoE" class="it.test.corsospring.BeanAutoE" autowire="constructor">  </bean>
+	 
+</beans>
