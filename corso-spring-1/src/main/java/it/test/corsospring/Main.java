@@ -27,7 +27,9 @@ public class Main
 //		autowire();
 //		scope();
 //		property();
-		propertyContext();
+//		propertyContext();
+//		annotation();
+		annotation2();
 	}
 	
 	
@@ -203,5 +205,31 @@ public class Main
 		BeanProperty prop = context.getBean("prop", BeanProperty.class);
 		prop.saluto();
 		//PropertySourcesPlaceholderConfigurer
+	}
+	
+	
+	public static void annotation()
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans-annotations.xml");
+		BeanAnnotation b = context.getBean("beanAnnotation", BeanAnnotation.class);
+		b.saluto();
+	}
+	
+	public static void annotation2()
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans-annotations.xml");
+//		BeanAnnotation b = context.getBean("beanAnnotation", BeanAnnotation.class);
+//		b.saluto();
+		
+		it.test.corsospring.autowire.OrdineService os = context.getBean("ordine", it.test.corsospring.autowire.OrdineService.class);
+		
+		System.out.println(os.getOrdineInfo());
+		
+		
+		//distuzione di un bean
+		BeanDefinitionRegistry registry = (BeanDefinitionRegistry) context.getAutowireCapableBeanFactory();
+		registry.removeBeanDefinition("ordine");
+		
+		
 	}
 }
